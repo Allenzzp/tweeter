@@ -1,8 +1,9 @@
 #tweets {
   margin: 2rem 0;
+  
 }
-#tweets :hover {
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+#tweets .tweet:hover {
+  box-shadow: 12px 12px rgba(0, 0, 255, .2);
 }
 .avatar-name {
   display: flex;
@@ -35,6 +36,11 @@
 }
 .icon-group :hover {
   color: rgba(211, 176, 59, 0.795);
+}
+.tweet-avatar {
+  width: 128px;
+  height: 128px;
+  z-index: 2;
 }
 
 
