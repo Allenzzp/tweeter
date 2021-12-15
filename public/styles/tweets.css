@@ -17,8 +17,12 @@
 #tweets header, #tweets footer {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0 ;
+  margin: 0 0 1rem 0 ;
   padding: 0 1rem;
+}
+
+#tweets header p{
+  align-self: center;
 }
 
 #tweets p {
@@ -38,8 +42,8 @@
   color: rgba(211, 176, 59, 0.795);
 }
 .tweet-avatar {
-  width: 128px;
-  height: 128px;
+  width: 64px;
+  height: 64px;
   z-index: 2;
 }
 
