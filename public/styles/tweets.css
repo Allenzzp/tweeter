@@ -1,0 +1,40 @@
+#tweets {
+  margin: 2rem 0;
+}
+#tweets :hover {
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+.avatar-name {
+  display: flex;
+}
+#tweets .tweet {
+  border: 3px solid black;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+#tweets header, #tweets footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 ;
+  padding: 0 1rem;
+}
+
+#tweets p {
+  margin: 0;
+}
+#tweets header > p {
+  color: rgba(165, 164, 164, 0.527);
+}
+#tweets main {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid black;
+  width: 100%;
+}
+.icon-group :hover {
+  color: rgba(211, 176, 59, 0.795);
+}
+
+

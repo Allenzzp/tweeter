@@ -6,13 +6,14 @@
   font-weight: bolder;
 }
 #tweet-text {
+  outline: none;
   border: none;
-  border-bottom: 5px solid black;
+  border-bottom: 3px solid black;
   background: none;
-  height: 30px;
   resize: none;
-  overflow: hidden;
+  overflow: auto;
 }
+
 .new-tweet div {
   display: flex;
   justify-content: space-between;
@@ -22,4 +23,7 @@
 .new-tweet button {
   background-color: #4056A1;
   color: #FFFFFF;
+}
+.red-color {
+  color: red;
 }
