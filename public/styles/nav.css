@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: rgb(64, 86, 161);
   color: #FFFFFF;
   padding: 0 1.5em;
   display: flex;
@@ -11,13 +11,23 @@ nav {
   position: fixed;
   top: 0;
 }
+nav.bgc-none {
+  background-color: rgba(64, 86, 161, 0);
+}
 nav h2 {
   font-family: "Bungee", cursive;
 }
 nav i {
   color: red;
   margin-top: 0.3rem;
+  position: relative;
+  -webkit-animation: up-down 1s ease 0s infinite alternate;
 }
+
+.write-tweet:hover {
+  cursor: pointer;
+}
+
 .write-tweet {
   display: flex;
   flex-direction: column;
@@ -25,4 +35,13 @@ nav i {
 }
 .write-tweet p {
   margin: 0;
+}
+
+@-webkit-keyframes up-down {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 5px;
+  }
 }

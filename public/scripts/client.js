@@ -10,9 +10,6 @@ $(document).ready(() => {
   const renderTweets = function(tweets) { //render tweets already exists
     const $tweets = $("#tweets");
     $tweets.empty();
-    // tweets.sort((a, b) => {
-    //   return b.created_at - a.created_at;
-    // });
     tweets.forEach(tweetObj => {
       $tweets.append(createTweetElement(tweetObj));
     });
@@ -97,6 +94,15 @@ $(document).ready(() => {
       console.log("error:", err);
     });
   };
+
+  $(".write-tweet").on("click", function() {
+    if ($(".new-tweet").first().is(":hidden")) {
+      $(".new-tweet").slideDown(1000);
+      $("#tweet-text").focus();
+    } else {
+      $(".new-tweet").slideUp(1000);
+    }
+  });
   
   loadTweets();
 });
