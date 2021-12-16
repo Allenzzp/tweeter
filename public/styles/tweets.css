@@ -8,10 +8,14 @@
 .avatar-name {
   display: flex;
 }
-#tweets .tweet {
+#tweets .avatar-name p {
+  margin-left: 0.5rem;
+}
+.tweet {
   border: 3px solid black;
   border-radius: 3px;
   padding: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 #tweets header, #tweets footer {
@@ -44,7 +48,6 @@
 .tweet-avatar {
   width: 64px;
   height: 64px;
-  z-index: 2;
 }
 
 
