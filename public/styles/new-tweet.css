@@ -27,3 +27,16 @@
 .red-color {
   color: red;
 }
+
+#error {
+  border: 3px solid red;
+  color: red;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+}
+#error p {
+  padding: 0 1rem;
+}

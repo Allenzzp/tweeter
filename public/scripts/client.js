@@ -5,15 +5,20 @@
  */
 
 $(document).ready(() => {
+  $("#error").hide();
 
   const renderTweets = function(tweets) { //render tweets already exists
     const $tweets = $("#tweets");
+    $tweets.empty();
+    // tweets.sort((a, b) => {
+    //   return b.created_at - a.created_at;
+    // });
     tweets.forEach(tweetObj => {
       $tweets.append(createTweetElement(tweetObj));
     });
   }
 
-  const createTweetElement = (tweet) => { //use tweet Obj to create tweet element
+  const createTweetElement = (tweet) => { 
     const $tweet = $(`<article class="tweet"></article>`);
     const $header = $(`
       <header>
@@ -43,38 +48,33 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  const createTweetObj = (comment) => {
-    return {
-      user: {
-        name: "Allen",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@Allenzzp"
-      },
-      content: {
-        text: `${comment}`
-      },
-      "create_at": Date.now()
-    }
-  };
-
   const sendTweet = (elementObj) => {
-    const data = $(elementObj).serialize();//text=xxxx
-    let valid = data.split("=")[1];
+    const data = $(elementObj).serialize();//text=hello%20wordld
+    const valid = data.split("=");
     if (valid.length === 0) {
-      alert("You haven't entered anything!");
+      $("#error").slideDown();
+      const $errP = $("#error p");
+      $errP.text("You haven't entered anything!");
+      setTimeout(() => {
+        $("#error").slideUp();
+      }, 3000);
       return;
     } else if (valid.length > 140) {
-      alert("You message cannot go over 140 characters!");
+      $("#error").slideDown();
+      const $errP = $("#error p");
+      $errP.text("You message cannot go over 140 characters!");
+      setTimeout(() => {
+        $("#error").slideUp();
+      }, 3000);
       return;
     };
-    //$.ajax({url: "/tweets", data: data, method: "POST"}); // I don't need to send post request right??? 
-    valid = valid.replaceAll("%20", " "); //is there other way to do this???
-    const $tweets = $("#tweets");
-    const $newTweetComment = createTweetElement(createTweetObj(valid));
-    $tweets.prepend($newTweetComment);
+    $.ajax({url: "/tweets", data: data, method: "POST", success: () => {
+      loadTweets();
+      $("#tweet-text").val("");
+    }}); 
   };
 
-  $(".new-tweet form").on("submit", function(event) { //press button to send tweet
+  $(".new-tweet form").on("submit", function(event) {
     event.preventDefault();
     sendTweet(this);
   });
@@ -96,7 +96,6 @@ $(document).ready(() => {
     .catch((err) => {
       console.log("error:", err);
     });
-
   };
   
   loadTweets();
