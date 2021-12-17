@@ -16,3 +16,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Md5
+
+## Stretch Part
+- Implement form toggle
+- Add a second toggle button
+  - Second button displays when user starts to scroll down; Nav button disappears
+  - Disappear when user scrolls back to top; Nav button reappears
+  - Click on the second button can bring user to top of the page with textarea opened and enabled
+
+## Screenshots
+
+!["screenshot of home page in PC"]()
+!["screenshot of home page in mobile"]()

@@ -76,12 +76,6 @@ $(document).ready(() => {
     sendTweet(this);
   });
 
-  // $(".new-tweet form").on("keydown", function(event) { //press enter to send tweet
-  //   if (event.which === 13) {
-  //     sendTweet(this);
-  //   }
-  // });
-
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
@@ -103,6 +97,5 @@ $(document).ready(() => {
       $(".new-tweet").slideUp(1000);
     }
   });
-  
   loadTweets();
 });
