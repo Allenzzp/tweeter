@@ -29,4 +29,9 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["screenshot of home page in PC"](https://github.com/Allenzzp/tweeter/blob/master/docs/homepage_pc.png)
+
 !["screenshot of home page in mobile"](https://github.com/Allenzzp/tweeter/blob/master/docs/homepage_mobile.png)
+
+!["screenshot of error message"](https://github.com/Allenzzp/tweeter/blob/master/docs/error1_no_input.png)
+
+!["screenshot of error message"](https://github.com/Allenzzp/tweeter/blob/master/docs/error2_input_over_140.png)
