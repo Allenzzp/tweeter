@@ -1,5 +1,5 @@
 $(document).ready(() => {
-
+  //Update characters available when user type in tweets
   $("#tweet-text").on("input", function() {
     const len = this.value.length;
     const count = 140 -len;

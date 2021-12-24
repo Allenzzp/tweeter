@@ -7,7 +7,8 @@
 $(document).ready(() => {
   $("#error").hide();
 
-  const renderTweets = function(tweets) { //render tweets already exists
+  //render tweets from database
+  const renderTweets = function(tweets) { 
     const $tweets = $("#tweets");
     $tweets.empty();
     tweets.forEach(tweetObj => {
@@ -15,7 +16,7 @@ $(document).ready(() => {
     });
   }
 
-  const createTweetElement = (tweet) => { 
+  const createTweetElement = (tweet) => {
     const $tweet = $(`<article class="tweet"></article>`);
     const $header = $(`
       <header>
@@ -45,24 +46,25 @@ $(document).ready(() => {
     return $tweet;
   };
 
+  //helper function for checking valid tweet input and creating new tweet
   const sendTweet = (elementObj) => {
     const data = $(elementObj).serialize();//text=hello%20wordld
-    const valid = data.split("=");
+    const valid = data.split("=")[1];
     if (valid.length === 0) {
       $("#error").slideDown();
       const $errP = $("#error p");
       $errP.text("You haven't entered anything!");
       setTimeout(() => {
         $("#error").slideUp();
-      }, 3000);
+      }, 3500);
       return;
     } else if (valid.length > 140) {
       $("#error").slideDown();
       const $errP = $("#error p");
-      $errP.text("You message cannot go over 140 characters!");
+      $errP.text("Your message cannot go over 140 characters!");
       setTimeout(() => {
         $("#error").slideUp();
-      }, 3000);
+      }, 3500);
       return;
     };
     $.ajax({url: "/tweets", data: data, method: "POST", success: () => {
@@ -71,6 +73,7 @@ $(document).ready(() => {
     }}); 
   };
 
+  //Listening on submitting button when User wants to create new tweet
   $(".new-tweet form").on("submit", function(event) {
     event.preventDefault();
     sendTweet(this);
